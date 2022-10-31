@@ -1,8 +1,14 @@
-/* eslint-disable */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { FaTrash } from 'react-icons/fa';
 import styles from './TodoItem.module.css';
 
-const TodoItem = ({todo, handleChangeProps, deleteTodoProps, setUpdate}) => {
+const TodoItem = ({
+  todo,
+  handleChangeProps,
+  deleteTodoProps,
+  setUpdate,
+}) => {
   const [editing, setEditing] = useState(false);
 
   const handleEditing = () => {
@@ -42,7 +48,9 @@ const TodoItem = ({todo, handleChangeProps, deleteTodoProps, setUpdate}) => {
           checked={completed}
           onChange={() => handleChangeProps(id)}
         />
-        <button type="button" onClick={() => deleteTodoProps(id)}>Delete</button>
+        <button type="button" onClick={() => deleteTodoProps(id)}>
+          <FaTrash style={{ color: 'orangered', fontSize: '16px' }} />
+        </button>
         <span style={completed ? completedStyle : null}>{title}</span>
       </div>
       <input
@@ -57,6 +65,13 @@ const TodoItem = ({todo, handleChangeProps, deleteTodoProps, setUpdate}) => {
       />
     </li>
   );
+};
+
+TodoItem.propTypes = {
+  todo: PropTypes.node.isRequired,
+  handleChangeProps: PropTypes.node.isRequired,
+  deleteTodoProps: PropTypes.node.isRequired,
+  setUpdate: PropTypes.node.isRequired,
 };
 
 export default TodoItem;

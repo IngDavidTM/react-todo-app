@@ -1,7 +1,8 @@
-/* eslint-disable */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { FaPlusCircle } from 'react-icons/fa';
 
-const InputTodo = ({addTodoProps}) => {
+const InputTodo = ({ addTodoProps }) => {
   const [inputText, setInputText] = useState({
     title: '',
   });
@@ -21,6 +22,7 @@ const InputTodo = ({addTodoProps}) => {
         title: '',
       });
     } else {
+      // eslint-disable-next-line no-alert
       alert('Please write item');
     }
   };
@@ -35,9 +37,17 @@ const InputTodo = ({addTodoProps}) => {
         name="title"
         onChange={onChange}
       />
-      <button className="input-submit">Submit</button>
+      <button type="button" className="input-submit">
+        <FaPlusCircle
+          style={{ color: 'darkcyan', fontSize: '20px', marginTop: '2px' }}
+        />
+      </button>
     </form>
   );
+};
+
+InputTodo.propTypes = {
+  addTodoProps: PropTypes.node.isRequired,
 };
 
 export default InputTodo;
