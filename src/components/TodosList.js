@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import TodoItem from './TodoItem';
 
@@ -11,6 +12,7 @@ class TodosList extends React.Component {
             todo={todo}
             handleChangeProps={this.props.handleChangeProps}
             deleteTodoProps={this.props.deleteTodoProps}
+            setUpdate={this.props.setUpdate}
           />
         ))}
       </ul>
