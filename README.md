@@ -33,7 +33,7 @@ $npm init -y
 ```
 
 ### Live GitHub Page
-- Not available
+- [Live](https://6360a272009fad3e48226b39--heroic-concha-38ec96.netlify.app/)
 
 ## Authors
 
